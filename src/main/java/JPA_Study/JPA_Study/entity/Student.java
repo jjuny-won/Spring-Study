@@ -20,7 +20,8 @@ public class Student {
 
     private String name;
 
-    @ManyToOne(fetch = FetchType.EAGER)
+//    @ManyToOne(fetch = FetchType.EAGER)
+    @ManyToOne(fetch = FetchType.LAZY)
     private Course course;
 
 

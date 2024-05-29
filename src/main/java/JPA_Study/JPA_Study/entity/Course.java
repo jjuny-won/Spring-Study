@@ -19,6 +19,7 @@ public class Course {
     private String name;
 
     // 일대다 관계 정의: Course는 여러 Student를 가질 수 있음
-    @OneToMany(mappedBy = "course",fetch=FetchType.EAGER) //Lazy
+//    @OneToMany(mappedBy = "course",fetch=FetchType.EAGER) //Lazy
+    @OneToMany(mappedBy = "course",fetch = FetchType.LAZY) //Lazy
     private Set<Student> students = new HashSet<>();
 }
