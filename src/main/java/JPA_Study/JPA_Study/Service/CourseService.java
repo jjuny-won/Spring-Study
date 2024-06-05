@@ -28,4 +28,13 @@ public class CourseService {
             }
         }
     }
+    @Transactional(readOnly = true)
+    public List<Course> findAllCourses() {
+        List<Course> courses = courseRepository.findAll();
+        for (Course course : courses) {
+            course.getStudents().size();  // Initialize students collection
+            course.getMaterials().size();  // Initialize materials collection
+        }
+        return courses;
+    }
 }
